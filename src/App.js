@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <HomeScreen />
+
       <Routes>
-        <Route extact path="/" />
+        <Route extact path="/" element={<HomeScreen />} />
 
         <Route
           path="/home"

@@ -1,0 +1,11 @@
+.menulink{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.menulink>a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+
+}

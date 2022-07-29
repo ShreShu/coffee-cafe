@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../assests/logo.jpg";
-import { Example } from "../MenuMotion/Example";
+import Example from "../Example/Example";
 const Header = () => {
   return (
     <div className="header">
