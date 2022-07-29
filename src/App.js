@@ -5,6 +5,8 @@ import "./App.css";
 import Footer from "./screen/Footer";
 import Header from "./screen/Header";
 import HomeScreen from "./screen/HomeScreen";
+import SignIn from "./screen/SignIn";
+import SignUp from "./screen/SignUp";
 
 function App() {
   return (
@@ -15,10 +17,18 @@ function App() {
         <Route extact path="/" element={<HomeScreen />} />
 
         <Route
-          path="/home"
+          path="/signin"
           element={
             <Fade>
-              <div>hello</div>
+              <SignIn />
+            </Fade>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Fade>
+              <SignUp />
             </Fade>
           }
         />

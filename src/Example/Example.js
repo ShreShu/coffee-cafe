@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuLink from "./MenuLink";
+import { useSelector, useDispatch } from "react-redux";
+import { userActions } from "../features/userSlice";
 
 function Sidebar({ sideBar = false, setSideBar = () => {} }) {
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const dispatch = useDispatch();
   return (
     <AnimatePresence>
       {sideBar && (
@@ -25,27 +29,59 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
             <CloseIcon
               onClick={() => setSideBar((sideBar) => !sideBar)}
               className="sidebar__button"
-            >
-              &times;
-            </CloseIcon>
+            />
             <MenuLink
               name="Home"
               path="/"
               onClick={() => setSideBar((sideBar) => !sideBar)}
             />
+            {!isLoggedIn && (
+              <MenuLink
+                name="Sign Up"
+                path="/signup"
+                onClick={() => setSideBar((sideBar) => !sideBar)}
+              />
+            )}
+            {!isLoggedIn && (
+              <MenuLink
+                name="Log in"
+                path="/signin"
+                onClick={() => setSideBar((sideBar) => !sideBar)}
+              />
+            )}
+
+            {isLoggedIn && (
+              <MenuLink
+                path="all-products"
+                name="All Products"
+                onClick={() => setSideBar((sideBar) => !sideBar)}
+              />
+            )}
+            {isLoggedIn && (
+              <MenuLink
+                path="orders"
+                name="Previous Orders"
+                onClick={() => setSideBar((sideBar) => !sideBar)}
+              />
+            )}
+            {isLoggedIn && (
+              <MenuLink
+                path="favorite"
+                name="Favorite Products"
+                onClick={() => setSideBar((sideBar) => !sideBar)}
+              />
+            )}
+            {isLoggedIn && (
+              <MenuLink
+                path=""
+                name="Log Out"
+                onClick={() => dispatch(userActions.logout())}
+              />
+            )}
+
             <MenuLink
-              name="Menus"
-              path="/home"
-              onClick={() => setSideBar((sideBar) => !sideBar)}
-            />
-            <MenuLink
-              name="Gallery"
-              path="/home"
-              onClick={() => setSideBar((sideBar) => !sideBar)}
-            />
-            <MenuLink
-              name="Contact"
-              path="/home"
+              name="Find a store"
+              path="/findstore"
               onClick={() => setSideBar((sideBar) => !sideBar)}
             />
           </motion.div>
@@ -67,12 +103,12 @@ function Sidebar({ sideBar = false, setSideBar = () => {} }) {
   );
 }
 
-function Content({ sideBar, setSideBar, modal }) {
+function Content({ sideBar, setSideBar }) {
   return (
     <motion.div
       animate={{
-        scale: sideBar || modal ? 0.8 : 1,
-        opacity: sideBar || modal ? 0.5 : 1,
+        scale: sideBar ? 0.8 : 1,
+        opacity: sideBar ? 0.5 : 1,
       }}
       transition={{ type: "spring", bounce: 0, duration: 0.4 }}
     >
@@ -85,10 +121,10 @@ function Content({ sideBar, setSideBar, modal }) {
 
 export default function Example() {
   const [sideBar, setSideBar] = React.useState(false);
-  const [modal, setModal] = React.useState(false);
+  //const [modal, setModal] = React.useState(false);
   return (
     <div className="example">
-      <Content {...{ sideBar, setSideBar, modal, setModal }} />
+      <Content {...{ sideBar, setSideBar }} />
       <Sidebar {...{ sideBar, setSideBar }} />
     </div>
   );

@@ -1,10 +1,11 @@
 .header{
     height: 101px;
-    width: 100p0x;
+    width: 94%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 40px;
+    padding-right: 40px;
     z-index: 2;
     -webkit-box-shadow: 0px 3px 5px 0px rgba(150,150,150,1);
     -moz-box-shadow: 0px 3px 5px 0px rgba(150,150,150,1);
@@ -46,3 +47,71 @@
 
     
 }
+.header__right__phone{
+    display: none
+}
+
+@media only screen 
+   and (max-width : 768px) {
+    .header__right__phone{
+        display: block;
+    }
+    .header__right{
+        display: none
+    }
+}
+
+.header__right>a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    opacity: 0.87;
+    font-size: 14px;
+    margin-left: 10px;   
+}
+
+.header__right>button{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    opacity: 0.87;
+    font-size: 14px;
+    margin-left: 10px;   
+}
+
+@media only screen and (min-width:787) {
+    .header__right{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-left: 30px;
+    }
+}
+
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 1px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	border:2px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Georgia;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 36px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
