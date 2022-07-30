@@ -14,7 +14,7 @@ const Header = () => {
 
   const logout = () => {
     dispatch(userActions.logout());
-    navigate("/home", { replace: true });
+    navigate("/", { replace: true });
   };
   return (
     <div className="header">
