@@ -5,6 +5,8 @@ import "./App.css";
 import Footer from "./screen/Footer";
 import Header from "./screen/Header";
 import HomeScreen from "./screen/HomeScreen";
+import Menu from "./screen/Menu";
+import Product from "./screen/Product";
 import SignIn from "./screen/SignIn";
 import SignUp from "./screen/SignUp";
 
@@ -32,6 +34,8 @@ function App() {
             </Fade>
           }
         />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/products/:category" element={<Product />} />
       </Routes>
       <Footer />
     </div>

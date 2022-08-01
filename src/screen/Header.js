@@ -8,6 +8,7 @@ import { userActions } from "../features/userSlice";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const email = useSelector((state) => state.user.userMail);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log(isLoggedIn);
@@ -38,6 +39,12 @@ const Header = () => {
         {!isLoggedIn && (
           <Link to="signup" className="header__link myButton">
             Join Now
+          </Link>
+        )}
+
+        {isLoggedIn && (
+          <Link to="/menu" className="header__link">
+            Welcome {email}
           </Link>
         )}
 

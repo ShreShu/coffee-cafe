@@ -1,0 +1,29 @@
+.category__image{
+    height: 100px;
+    width: 120px;
+    align-items: center;
+
+}
+
+.category{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.category__image>img{
+    height: 100px;
+    width: 120px;
+    border-radius: 45%;
+}
+
+.category__name{
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.category__name>p{
+    margin-top: 40%;
+}

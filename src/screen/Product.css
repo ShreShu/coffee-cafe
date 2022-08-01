@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500;1,900&display=swap');
+
+.product{
+    margin: 10%;
+}
+
+.product__title{
+font-family: 'Raleway', sans-serif;;
+}
