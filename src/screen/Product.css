@@ -7,3 +7,7 @@
 .product__title{
 font-family: 'Raleway', sans-serif;;
 }
+
+.product__promise{
+    margin: 0 auto;
+}

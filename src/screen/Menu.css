@@ -1,4 +1,7 @@
 .menu{
-
     margin: 10%;
+}
+
+.menu__promise{
+    margin: 0 auto;
 }
