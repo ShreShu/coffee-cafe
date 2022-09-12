@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
-import { Fade } from "react-awesome-reveal";
-import { Categories_List } from "../Apis/URLs";
 import CategoryItem from "./CategoryItem";
-import axios from "axios";
 import "./Menu.css";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCategories } from "../features/Actions";
 import ReactLoading from "react-loading";
